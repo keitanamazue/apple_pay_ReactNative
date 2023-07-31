@@ -22,6 +22,7 @@ export type NavigationProp = NativeStackNavigationProp<
 
 const Paywall = () => {
   const { currentOffering, customerInfo, isProMember } = useRevenueCat();
+  
   const navigation = useNavigation<NavigationProp>();
 
   const handleMonthlyPurchase = async () => {
@@ -31,9 +32,8 @@ const Paywall = () => {
       currentOffering.monthly
     );
 
-    console.log("DEBUG 1 >> ", purchaserInfo.customerInfo.entitlements.active);
 
-    if (purchaserInfo.customerInfo.entitlements.active.pro) {
+    if (purchaserInfo.customerInfo.entitlements.active.basic) {
       Alert.alert("Success", "Your purchase has been completed");
       navigation.goBack();
     }
@@ -46,9 +46,7 @@ const Paywall = () => {
       currentOffering.annual
     );
 
-    console.log("DEBUG 2 >> ", purchaserInfo.customerInfo.entitlements.active);
-
-    if (purchaserInfo.customerInfo.entitlements.active.proAnnual) {
+    if (purchaserInfo.customerInfo.entitlements.active.pro) {
       Alert.alert("Success", "Your purchase has been completed");
       navigation.goBack();
     }

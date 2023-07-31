@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rn-app-revenuecat",
-    "slug": "rn-app-revenuecat",
+    "name": "apple-pay",
+    "slug": "apple-pay",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,20 +11,17 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.ssssangha.rnapprevenuecat"
+      "bundleIdentifier": "com.keitanamazue.applepay"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#ffffff"
       }
     },
     "web": {
@@ -32,7 +29,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "b419834a-16e2-42e6-a607-dd6411d45e83"
+        "projectId": "7b078d86-369a-4d9e-999e-44c8e2766f33"
       }
     }
   }

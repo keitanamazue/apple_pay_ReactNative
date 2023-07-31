@@ -6,7 +6,7 @@ import Purchases, {
 } from "react-native-purchases";
 
 const APIKeys = {
-  apple: "your_revenuecat_apple_api_key",
+  apple: "appl_qtlibJABxecTLhivVynyqYJzzmk",
   google: "your_revenuecat_google_api_key",
 };
 
@@ -17,8 +17,8 @@ function useRevenueCat() {
   const [customerInfo, setCustomerInfo] = useState<CustomerInfo | null>(null);
 
   const isProMember =
-    customerInfo?.activeSubscriptions.includes("pro") ||
-    customerInfo?.activeSubscriptions.includes("proAnnual");
+    customerInfo?.activeSubscriptions.includes("basic") ||
+    customerInfo?.activeSubscriptions.includes("pro");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +32,9 @@ function useRevenueCat() {
 
       const offerings = await Purchases.getOfferings();
       const customerInfo = await Purchases.getCustomerInfo();
+
+      console.log({offerings});
+      
 
       setCustomerInfo(customerInfo);
       setCurrentOffering(offerings.current);
